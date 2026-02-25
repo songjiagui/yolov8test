@@ -1,0 +1,3000 @@
+(base) ztl@RK3588:~/yolov8-rknn-c++/yolov8/yolov8_det/cpp/install/rk3588_linux$ ./yolov8_videocapture_demo ./yolov8n.rknn rtsp://admin:hzgm2026@192.168.5.65:554/Streaming/Channels/102 nosave
+UART init OK
+[sudo] ztl 的密码： 
+sh: 1: echo: echo: I/O error
+GPIO 当前值 = 0
+load lable ./model/coco_80_labels_list.txt
+model input num: 1, output num: 9
+input tensors:
+  index=0, name=images, n_dims=4, dims=[1, 640, 640, 3], n_elems=1228800, size=1228800, fmt=NHWC, type=INT8, qnt_type=AFFINE, zp=-128, scale=0.003922
+output tensors:
+  index=0, name=conv2d_47, n_dims=4, dims=[1, 64, 80, 80], n_elems=409600, size=409600, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-62, scale=0.114653
+  index=1, name=sigmoid, n_dims=4, dims=[1, 80, 80, 80], n_elems=512000, size=512000, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-128, scale=0.001961
+  index=2, name=clamp, n_dims=4, dims=[1, 1, 80, 80], n_elems=6400, size=6400, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-128, scale=0.000933
+  index=3, name=conv2d_53, n_dims=4, dims=[1, 64, 40, 40], n_elems=102400, size=102400, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-39, scale=0.073611
+  index=4, name=sigmoid_1, n_dims=4, dims=[1, 80, 40, 40], n_elems=128000, size=128000, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-128, scale=0.001963
+  index=5, name=clamp_1, n_dims=4, dims=[1, 1, 40, 40], n_elems=1600, size=1600, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-128, scale=0.002052
+  index=6, name=conv2d_59, n_dims=4, dims=[1, 64, 20, 20], n_elems=25600, size=25600, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-27, scale=0.075863
+  index=7, name=sigmoid_2, n_dims=4, dims=[1, 80, 20, 20], n_elems=32000, size=32000, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-128, scale=0.003569
+  index=8, name=clamp_2, n_dims=4, dims=[1, 1, 20, 20], n_elems=400, size=400, fmt=NCHW, type=INT8, qnt_type=AFFINE, zp=-128, scale=0.003569
+model is NHWC input fmt
+model input height=640, width=640, channel=3
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55bfee76d0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+rga_api version 1.10.1_[0]
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: Invalid argument
+ RgaCollorFill(1820) RGA_COLORFILL fail: Invalid argument
+6432 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+6432 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+6432 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [890, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+6432 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+6432 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+6432 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+6432 im2d_rga_impl rga_dump_opt(1563): 
+
+6432 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+检测到目标 - GPIO高 + RS485 + 保存图片
+保存图片: runs/2026-02-25_14-33-02.jpg
+GPIO 当前值 = 1
+GPIO 当前值 = 0
+RS485发送: 检测到目标
+Infer time(ms): 363.272003 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c077c8a0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+7079 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+7079 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+7079 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [892, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+7079 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+7079 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+7079 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+7079 im2d_rga_impl rga_dump_opt(1563): 
+
+7079 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 239.895004 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c077c8a0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+7327 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+7327 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+7327 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [894, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+7327 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+7327 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+7327 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+7327 im2d_rga_impl rga_dump_opt(1563): 
+
+7327 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 241.231003 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c077c8a0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+7575 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+7575 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+7575 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [896, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+7576 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+7576 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+7576 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+7576 im2d_rga_impl rga_dump_opt(1563): 
+
+7576 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 243.667007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c077c8a0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+7830 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+7830 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+7830 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [898, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+7831 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+7831 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+7831 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+7831 im2d_rga_impl rga_dump_opt(1563): 
+
+7831 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 252.334000 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c077c8a0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+8079 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+8079 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+8079 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [900, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+8079 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+8079 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+8079 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+8079 im2d_rga_impl rga_dump_opt(1563): 
+
+8079 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 250.514008 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c077c8a0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+8339 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+8339 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+8339 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [902, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+8339 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+8339 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+8339 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+8340 im2d_rga_impl rga_dump_opt(1563): 
+
+8340 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 254.011002 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+8612 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+8612 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+8612 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [904, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+8612 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+8612 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+8612 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+8612 im2d_rga_impl rga_dump_opt(1563): 
+
+8612 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 252.710007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+8869 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+8869 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+8869 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [906, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+8870 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+8870 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+8870 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+8870 im2d_rga_impl rga_dump_opt(1563): 
+
+8870 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 257.537994 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+9134 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+9134 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+9134 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [908, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+9134 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+9134 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+9134 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+9134 im2d_rga_impl rga_dump_opt(1563): 
+
+9134 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 255.720993 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+9392 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+9392 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+9392 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [910, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+9392 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+9392 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+9392 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+9392 im2d_rga_impl rga_dump_opt(1563): 
+
+9392 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 253.477005 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+9655 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+9655 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+9655 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [912, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+9656 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+9656 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+9656 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+9656 im2d_rga_impl rga_dump_opt(1563): 
+
+9656 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 252.675995 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+9903 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+9903 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+9903 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [914, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+9903 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+9903 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+9903 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+9903 im2d_rga_impl rga_dump_opt(1563): 
+
+9903 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 241.410995 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+10153 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+10153 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+10153 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [916, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+10153 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+10153 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+10153 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+10153 im2d_rga_impl rga_dump_opt(1563): 
+
+10153 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 249.690994 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+10402 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+10402 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+10402 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [918, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+10402 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+10402 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+10402 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+10402 im2d_rga_impl rga_dump_opt(1563): 
+
+10402 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 243.720001 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+10660 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+10660 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+10660 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [920, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+10660 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+10660 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+10660 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+10660 im2d_rga_impl rga_dump_opt(1563): 
+
+10660 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 255.505997 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+10922 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+10922 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+10922 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [922, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+10922 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+10922 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+10922 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+10923 im2d_rga_impl rga_dump_opt(1563): 
+
+10923 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 254.593994 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+11184 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+11184 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+11184 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [924, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+11184 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+11184 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+11184 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+11184 im2d_rga_impl rga_dump_opt(1563): 
+
+11184 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 260.834991 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+11451 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+11451 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+11452 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [926, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+11452 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+11452 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+11452 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+11452 im2d_rga_impl rga_dump_opt(1563): 
+
+11452 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 260.442993 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+11719 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+11719 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+11719 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [928, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+11719 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+11719 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+11719 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+11719 im2d_rga_impl rga_dump_opt(1563): 
+
+11719 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 254.796005 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+11972 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+11972 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+11972 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [930, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+11972 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+11972 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+11972 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+11972 im2d_rga_impl rga_dump_opt(1563): 
+
+11972 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 245.865005 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+12218 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+12218 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+12218 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [932, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+12218 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+12218 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+12218 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+12218 im2d_rga_impl rga_dump_opt(1563): 
+
+12218 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 239.630997 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+12463 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+12463 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+12463 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [934, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+12463 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+12463 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+12463 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+12463 im2d_rga_impl rga_dump_opt(1563): 
+
+12463 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 250.914993 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+12717 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+12717 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+12717 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [936, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+12717 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+12717 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+12717 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+12717 im2d_rga_impl rga_dump_opt(1563): 
+
+12717 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 236.787003 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+12954 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+12954 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+12954 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [938, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+12955 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+12955 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+12955 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+12955 im2d_rga_impl rga_dump_opt(1563): 
+
+12955 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 233.462006 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+13190 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+13190 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+13190 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [940, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+13190 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+13190 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+13190 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+13190 im2d_rga_impl rga_dump_opt(1563): 
+
+13190 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 234.895004 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+13428 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+13428 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+13428 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [942, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+13428 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+13428 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+13428 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+13428 im2d_rga_impl rga_dump_opt(1563): 
+
+13428 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 237.720001 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+13679 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+13679 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+13680 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [944, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+13680 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+13680 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+13680 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+13680 im2d_rga_impl rga_dump_opt(1563): 
+
+13680 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 248.016998 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+13934 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+13934 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+13934 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [946, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+13935 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+13935 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+13935 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+13935 im2d_rga_impl rga_dump_opt(1563): 
+
+13935 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 256.057007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+14197 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+14197 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+14197 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [948, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+14197 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+14197 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+14197 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+14197 im2d_rga_impl rga_dump_opt(1563): 
+
+14197 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 258.841003 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+14463 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+14463 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+14463 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [950, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+14463 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+14463 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+14463 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+14463 im2d_rga_impl rga_dump_opt(1563): 
+
+14463 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 261.873993 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+14726 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+14726 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+14726 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [952, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+14726 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+14726 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+14726 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+14726 im2d_rga_impl rga_dump_opt(1563): 
+
+14726 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 253.807007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+14986 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+14986 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+14986 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [954, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+14986 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+14986 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+14986 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+14986 im2d_rga_impl rga_dump_opt(1563): 
+
+14986 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 255.593994 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+15239 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+15239 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+15239 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [956, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+15239 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+15239 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+15239 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+15239 im2d_rga_impl rga_dump_opt(1563): 
+
+15239 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 236.233002 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+15477 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+15477 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+15477 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [958, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+15477 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+15477 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+15477 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+15477 im2d_rga_impl rga_dump_opt(1563): 
+
+15477 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 234.557999 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+15717 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+15717 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+15717 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [960, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+15717 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+15717 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+15717 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+15717 im2d_rga_impl rga_dump_opt(1563): 
+
+15717 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 242.319000 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+15962 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+15962 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+15962 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [962, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+15962 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+15962 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+15962 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+15962 im2d_rga_impl rga_dump_opt(1563): 
+
+15962 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 247.046005 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+16209 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+16209 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+16209 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [964, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+16209 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+16209 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+16209 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+16209 im2d_rga_impl rga_dump_opt(1563): 
+
+16209 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 231.779007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+16442 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+16442 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+16443 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [966, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+16443 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+16443 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+16443 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+16443 im2d_rga_impl rga_dump_opt(1563): 
+
+16443 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 231.889999 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+16676 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+16676 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+16676 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [968, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+16676 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+16676 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+16676 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+16676 im2d_rga_impl rga_dump_opt(1563): 
+
+16676 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 233.604996 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+16913 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+16913 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+16913 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [970, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+16913 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+16913 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+16913 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+16913 im2d_rga_impl rga_dump_opt(1563): 
+
+16913 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 234.156998 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+17167 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+17167 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+17167 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [972, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+17167 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+17167 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+17167 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+17167 im2d_rga_impl rga_dump_opt(1563): 
+
+17167 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 260.026001 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+17413 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+17413 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+17413 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [974, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+17413 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+17413 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+17413 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+17413 im2d_rga_impl rga_dump_opt(1563): 
+
+17413 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 247.317993 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+17663 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+17663 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+17663 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [976, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+17663 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+17663 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+17663 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+17663 im2d_rga_impl rga_dump_opt(1563): 
+
+17663 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 245.013000 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+17911 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+17911 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+17911 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [978, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+17911 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+17911 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+17911 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+17911 im2d_rga_impl rga_dump_opt(1563): 
+
+17911 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 246.287003 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+18161 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+18161 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+18161 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [980, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+18161 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+18161 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+18161 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+18161 im2d_rga_impl rga_dump_opt(1563): 
+
+18161 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 246.358994 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+18420 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+18421 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+18421 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [982, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+18421 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+18421 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+18421 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+18421 im2d_rga_impl rga_dump_opt(1563): 
+
+18421 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 254.638000 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+18682 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+18682 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+18682 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [984, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+18682 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+18682 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+18682 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+18682 im2d_rga_impl rga_dump_opt(1563): 
+
+18682 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 260.545013 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+18950 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+18950 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+18950 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [986, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+18950 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+18950 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+18950 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+18950 im2d_rga_impl rga_dump_opt(1563): 
+
+18950 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 262.746002 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+19219 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+19219 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+19220 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [988, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+19220 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+19220 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+19220 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+19220 im2d_rga_impl rga_dump_opt(1563): 
+
+19220 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 252.723999 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+19479 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+19479 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+19479 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [990, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+19479 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+19479 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+19479 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+19479 im2d_rga_impl rga_dump_opt(1563): 
+
+19479 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 264.959015 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+19751 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+19751 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+19751 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [992, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+19751 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+19751 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+19751 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+19751 im2d_rga_impl rga_dump_opt(1563): 
+
+19751 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 255.037994 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+20003 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+20003 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+20003 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [994, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+20003 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+20003 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+20003 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+20003 im2d_rga_impl rga_dump_opt(1563): 
+
+20003 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 249.410004 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+20265 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+20265 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+20265 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [996, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+20265 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+20265 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+20265 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+20265 im2d_rga_impl rga_dump_opt(1563): 
+
+20266 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 257.696991 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+20528 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+20528 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+20528 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [998, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+20528 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+20528 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+20528 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+20528 im2d_rga_impl rga_dump_opt(1563): 
+
+20528 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 259.213013 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+20794 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+20794 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+20795 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1000, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+20795 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+20795 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+20795 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+20795 im2d_rga_impl rga_dump_opt(1563): 
+
+20795 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 258.335999 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+21052 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+21052 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+21052 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1002, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+21052 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+21052 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+21052 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+21052 im2d_rga_impl rga_dump_opt(1563): 
+
+21052 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 248.113998 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+21312 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+21312 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+21312 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1004, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+21312 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+21312 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+21312 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+21312 im2d_rga_impl rga_dump_opt(1563): 
+
+21312 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 258.700012 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+21584 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+21584 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+21584 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1006, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+21584 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+21584 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+21584 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+21584 im2d_rga_impl rga_dump_opt(1563): 
+
+21584 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 266.657013 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+21850 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+21850 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+21850 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1008, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+21851 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+21851 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+21851 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+21851 im2d_rga_impl rga_dump_opt(1563): 
+
+21851 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 258.078003 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+22115 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+22115 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+22116 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1010, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+22116 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+22116 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+22116 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+22116 im2d_rga_impl rga_dump_opt(1563): 
+
+22116 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 268.936005 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+22382 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+22382 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+22382 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1012, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+22382 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+22382 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+22382 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+22382 im2d_rga_impl rga_dump_opt(1563): 
+
+22382 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 249.612000 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+22633 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+22633 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+22633 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1014, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+22633 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+22633 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+22634 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+22634 im2d_rga_impl rga_dump_opt(1563): 
+
+22634 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 247.056000 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+22883 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+22883 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+22883 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1016, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+22883 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+22883 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+22883 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+22883 im2d_rga_impl rga_dump_opt(1563): 
+
+22883 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 244.160995 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+23130 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+23130 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+23130 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1018, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+23130 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+23130 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+23130 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+23130 im2d_rga_impl rga_dump_opt(1563): 
+
+23130 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 245.335999 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+23379 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+23379 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+23379 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1020, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+23379 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+23379 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+23379 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+23379 im2d_rga_impl rga_dump_opt(1563): 
+
+23379 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 252.876999 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+23636 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+23636 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+23636 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1022, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+23636 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+23636 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+23636 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+23636 im2d_rga_impl rga_dump_opt(1563): 
+
+23636 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 227.253998 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+23863 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+23863 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+23863 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1024, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+23863 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+23863 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+23863 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+23863 im2d_rga_impl rga_dump_opt(1563): 
+
+23863 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 232.778000 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+24100 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+24100 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+24100 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1026, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+24100 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+24100 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+24100 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+24100 im2d_rga_impl rga_dump_opt(1563): 
+
+24100 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 235.179001 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+24340 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+24340 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+24340 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1028, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+24340 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+24340 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+24340 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+24340 im2d_rga_impl rga_dump_opt(1563): 
+
+24340 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 246.134003 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+24588 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+24588 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+24588 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1030, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+24588 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+24588 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+24588 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+24588 im2d_rga_impl rga_dump_opt(1563): 
+
+24588 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 234.386002 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+24824 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+24824 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+24824 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1032, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+24824 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+24824 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+24824 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+24824 im2d_rga_impl rga_dump_opt(1563): 
+
+24824 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 233.723007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+25062 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+25062 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+25062 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1034, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+25062 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+25062 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+25062 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+25062 im2d_rga_impl rga_dump_opt(1563): 
+
+25062 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 248.341995 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+25313 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+25313 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+25313 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1036, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+25314 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+25314 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+25314 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+25314 im2d_rga_impl rga_dump_opt(1563): 
+
+25314 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 247.283005 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+25564 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+25564 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+25564 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1038, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+25564 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+25564 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+25564 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+25564 im2d_rga_impl rga_dump_opt(1563): 
+
+25564 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 245.988998 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+25813 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+25813 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+25813 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1040, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+25813 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+25813 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+25813 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+25813 im2d_rga_impl rga_dump_opt(1563): 
+
+25813 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 247.238007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+26068 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+26068 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+26068 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1042, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+26068 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+26068 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+26068 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+26069 im2d_rga_impl rga_dump_opt(1563): 
+
+26069 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 244.610001 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+26316 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+26316 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+26316 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1044, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+26316 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+26316 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+26316 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+26316 im2d_rga_impl rga_dump_opt(1563): 
+
+26316 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 243.718002 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+26562 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+26562 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+26562 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1046, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+26563 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+26563 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+26563 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+26563 im2d_rga_impl rga_dump_opt(1563): 
+
+26563 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 248.613998 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+26815 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+26815 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+26815 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1048, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+26815 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+26815 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+26815 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+26815 im2d_rga_impl rga_dump_opt(1563): 
+
+26815 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 242.373001 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+27059 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+27059 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+27059 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1050, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+27060 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+27060 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+27060 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+27060 im2d_rga_impl rga_dump_opt(1563): 
+
+27060 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 245.862000 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+27310 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+27310 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+27310 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1052, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+27310 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+27310 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+27310 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+27310 im2d_rga_impl rga_dump_opt(1563): 
+
+27310 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 246.776001 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+27558 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+27558 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+27558 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1054, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+27558 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+27558 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+27558 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+27558 im2d_rga_impl rga_dump_opt(1563): 
+
+27558 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 239.835999 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+27798 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+27798 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+27798 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1056, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+27798 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+27798 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+27798 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+27798 im2d_rga_impl rga_dump_opt(1563): 
+
+27798 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 230.962006 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+28032 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+28032 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+28032 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1058, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+28032 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+28032 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+28032 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+28032 im2d_rga_impl rga_dump_opt(1563): 
+
+28032 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 233.397995 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+28281 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+28281 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+28281 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1060, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+28282 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+28282 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+28282 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+28282 im2d_rga_impl rga_dump_opt(1563): 
+
+28282 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 259.070007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+28531 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+28531 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+28531 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1062, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+28531 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+28531 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+28531 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+28531 im2d_rga_impl rga_dump_opt(1563): 
+
+28531 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 246.932007 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+28780 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+28780 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+28780 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1064, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+28780 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+28780 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+28780 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+28780 im2d_rga_impl rga_dump_opt(1563): 
+
+28780 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 233.139008 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+29015 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+29015 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+29015 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1066, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+29015 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+29015 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+29015 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+29015 im2d_rga_impl rga_dump_opt(1563): 
+
+29015 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+Infer time(ms): 234.014008 ms
+scale=1.000000 dst_box=(0 140 639 499) allow_slight_change=1 _left_offset=0 _top_offset=140 padding_w=0 padding_h=280
+src width=640 height=360 fmt=0x1 virAddr=0x0x55bfe3eac0 fd=0
+dst width=640 height=640 fmt=0x1 virAddr=0x0x55c07ac8b0 fd=0
+src_box=(0 0 639 359)
+dst_box=(0 140 639 499)
+color=0x72
+fill dst image (x y w h)=(0 0 640 640) with color=0x72727272
+ RgaCollorFill(1819) RGA_COLORFILL fail: 无效的参数
+ RgaCollorFill(1820) RGA_COLORFILL fail: 无效的参数
+29251 im2d_rga_impl rga_task_submit(2171): Failed to call RockChipRga interface, please use 'dmesg' command to view driver error log.
+29251 im2d_rga_impl rga_dump_channel_info(1500): src_channel: 
+  rect[x,y,w,h] = [0, 0, 0, 0]
+  image[w,h,ws,hs,f] = [0, 0, 0, 0, rgba8888]
+  buffer[handle,fd,va,pa] = [0, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0x0, rd_mode = 0x0
+
+29251 im2d_rga_impl rga_dump_channel_info(1500): dst_channel: 
+  rect[x,y,w,h] = [0, 0, 640, 640]
+  image[w,h,ws,hs,f] = [640, 640, 640, 640, rgb888]
+  buffer[handle,fd,va,pa] = [1068, 0, 0, 0]
+  color_space = 0x0, global_alpha = 0xff, rd_mode = 0x1
+
+29252 im2d_rga_impl rga_dump_opt(1550): opt version[0x0]:
+
+29252 im2d_rga_impl rga_dump_opt(1551): set_core[0x0], priority[0]
+
+29252 im2d_rga_impl rga_dump_opt(1554): color[0x72727272] 
+29252 im2d_rga_impl rga_dump_opt(1563): 
+
+29252 im2d_rga_impl rga_task_submit(2180): acquir_fence[-1], release_fence_ptr[0x0], usage[0x280000]
+
+rknn_run
+^CSignal 2 received. Terminating program...
+(base) ztl@RK3588:~/yolov8-rknn-c++/yolov8/yolov8_det/cpp/install/rk3588_linux$  
+
+
